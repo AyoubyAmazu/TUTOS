@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('vedios', function (Blueprint $table) {
             $table->id();
-            $table->text('content');
-            $table->unsignedBigInteger('commentable_id'); // ID de l'entité associée
-            $table->string('commentable_type'); // Type du modèle associé
+            $table->string('url');
+            $table->string('title');
             $table->timestamps();
         });
     }

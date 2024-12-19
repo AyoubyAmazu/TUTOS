@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Vedio extends Model
 {
     protected $fillable = [
-        'content',
+        'url',
+        'title',
     ];
     public function comments()
     {
