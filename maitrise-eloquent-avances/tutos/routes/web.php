@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,4 +13,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('auth');
+})->middleware('role:admin');
+
+Route::get('/editor', function () {
+    return 'Editor Dashboard';
+})->middleware('role:editor');
+
+
+Route::get('/update',[ArticleController::class,'update']);
